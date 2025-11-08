@@ -1,0 +1,1758 @@
+/* ------------------------------------------------------------------- */
+/* 0. VARIABLES Y FONT-FACE (Colores de logo-final-kitopia.jpg)        */
+/* ------------------------------------------------------------------- */
+:root {
+    --color-primary-red: #A91917; /* Rojo principal vibrante */
+    --color-secondary-red: #732420; /* Rojo oscuro/Vino */
+    --color-background-light: #FAF1E0; /* Crema/Hueso */
+    --color-text-dark: #333333; /* Texto principal */
+    --color-text-light: #ffffff; /* Texto claro */
+    
+    
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap; 
+}
+   /* ... */
+:root {
+    /* ... */
+    --font-japanese: 'Zen Kaku Gothic New', 'Arial Black', sans-serif;
+    /* ... */
+    --font-secondary: 'Poppins', sans-serif; /* Tipografía secundaria */
+}
+
+.features-section {
+    text-align: center;
+    background-color: rgb(0, 0, 0); /* Contraste con Quiénes Somos (crema) */
+    padding: 60px 5% 80px;
+    border: 3px solid var(--color-primary-red);
+    border-radius: 10px;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.features-section h2.section-title {
+    color: var(--color-background-light); /* Título principal en color Crema */
+    border-bottom-color: var(--color-primary-red); /* Mantener la línea roja */
+}
+
+.intro-page {
+    /* Esta regla general sobrescribe el color del texto de introducción para todas las secciones */
+    color: #cccccc; 
+}
+.feature-item {
+    text-align: center;
+    padding: 20px;
+    border: 1px solid #eee;
+    border-radius: 8px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    
+    background-color: white; 
+    
+    box-shadow: 0 8px 15px rgba(255, 255, 255, 0.1);
+} 
+
+.feature-item p {
+    color: var(--color-text-dark); /* El texto debe ser oscuro sobre la caja blanca */
+}
+
+.feature-item h3 {
+    color: var(--color-primary-red); 
+    /* ... */
+}
+
+.features-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 40px;
+    margin-top: 50px;
+}
+
+.feature-item {
+    text-align: center;
+    padding: 20px;
+    border: 2px solid var(--color-secondary-red);
+    border-radius: 8px;
+    background-color: white;
+    border-radius: 8px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.feature-item:hover {
+    transform: translateY(-5px); /* Se levanta al pasar el cursor */
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
+}
+
+.feature-item .icon {
+    font-size: 3em;
+    display: block;
+    margin-bottom: 10px;
+}
+
+.feature-item h3 {
+    color: var(--color-primary-red);
+    font-family: var(--font-japanese);
+    font-size: 1.5em;
+    margin-bottom: 10px;
+}
+
+.highlights-section {
+    background-color: #000000; 
+    position: relative;
+    overflow: hidden;
+
+    text-align: center;
+    width: 100%;
+    margin-top: 0px;
+    padding: 60px 0 80px 0;
+    margin-bottom: 40px;
+}
+.highlights-section .section-title {
+    color: var(--color-background-light); 
+    border-bottom-color: var(--color-background-light); 
+}
+.highlights-section .intro-page {
+    /* ⚠️ CAMBIO CLAVE 3: Párrafo descriptivo a Crema/Hueso */
+    color: var(--color-background-light); 
+} 
+
+.highlights-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+
+    background-image: url('imagenes/patron-japanese.jpg');
+    background-repeat: repeat; 
+    background-size: 400px;
+    filter: invert(100%);
+    opacity: 0.1;
+}
+
+.highlights-section .section-title,
+.highlights-section .intro-page,
+.product-showcase-grid {
+    position: relative;
+    z-index: 2;
+    /* Esto es lo que reemplaza el padding lateral de la sección */
+    max-width: 1200px; 
+    margin: 0 auto; 
+    padding: 0 5%; /* El padding que quitamos arriba, lo ponemos aquí */
+}
+
+.product-image {
+    width: 100%;
+    height: 200px; 
+    object-fit: cover; 
+    object-position: center center;
+    border-radius: 5px;
+    margin-bottom: 10px;
+    transition: transform 0.4s ease;
+}
+
+.product-showcase-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 40px;
+    margin-top: 30px;
+    text-align: center;
+}
+
+
+.showcase-item {
+    overflow: hidden; 
+    padding: 15px;
+    border-radius: 8px;
+    background-color: var(--color-background-light);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: box-shadow 0.3s ease, transform 0.3s ease;
+    position: relative; 
+    z-index: 5;
+}
+
+.showcase-item:hover {
+    transform: translateY(-5px); 
+    box-shadow: 0 10px 20px rgba(169, 25, 23, 0.3);
+}
+
+.showcase-item:hover .product-image {
+    transform: scale(1.08); /* Zoom sutil */
+}
+
+.showcase-item h3 {
+    color: var(--color-primary-red);
+    font-size: 1.4em;
+    margin: 15px 0;
+    letter-spacing: 2px;
+}
+
+.image-placeholder {
+    height: 200px;
+    width: 100%;
+    /* Simulación visual de las imágenes */
+    background-color: var(--color-background-light); 
+    border-radius: 5px;
+    line-height: 200px;
+    text-align: center;
+    font-size: 0.9em;
+    color: #999;
+}
+
+.final-cta {
+    text-align: center;
+    padding: 80px 5%;
+}
+
+.cta-box {
+    background-color: var(--color-secondary-red);
+    color: var(--color-text-light);
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+}
+
+.cta-box h2 {
+    color: var(--color-background-light);
+    font-size: 2.2em;
+    margin-bottom: 15px;
+}
+
+.cta-box p {
+    font-size: 1.1em;
+    margin-bottom: 30px;
+}
+
+/* El botón ya tiene estilo .btn-primary large */
+.cta-box .btn-primary.large {
+    background-color: var(--color-background-light);
+    color: var(--color-secondary-red);
+    border-color: var(--color-background-light);
+}
+
+.cta-box .btn-primary.large:hover {
+    background-color: white;
+    color: var(--color-primary-red);
+}
+.final-cta {
+    text-align: center;
+    padding: 80px 5%;
+    margin-top: 0;
+    background-color: var(--color-background-light);
+}
+
+/* ------------------------------------------------------------------- */
+/* 1. ESTILOS GENERALES Y RESET                                        */
+/* ------------------------------------------------------------------- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: var(--font-secondary);
+    line-height: 1.6;
+    color: var(--color-text-dark);
+    background-color:var(--color-background-light);
+}
+
+h1, h2, h3 {
+    font-family: var(--font-japanese); 
+    line-height: 1.2;
+    color: var(--color-secondary-red);
+}
+
+h2.section-title {
+    font-size: 2.5em;
+    margin-bottom: 0.8em;
+    text-align: center;
+    border-bottom: 3px solid var(--color-primary-red);
+    display: inline-block;
+    padding-bottom: 0.2em;
+}
+
+a {
+    text-decoration: none;
+    color: var(--color-primary-red);
+    transition: color 0.3s ease;
+}
+
+a:hover {
+    color: var(--color-secondary-red);
+}
+
+.content-section {
+    padding: 60px 5% 80px;
+    margin: 0 auto;
+    max-width: 1200px;
+    
+}
+
+.intro-page {
+    text-align: center;
+    font-size: 1.2em;
+    margin-bottom: 20px;
+    color: var(--color-text-dark);
+}
+
+/* Estado activo para la navegación */
+.main-nav ul li.active a {
+    color: var(--color-secondary-red);
+    border-bottom: 2px solid var(--color-primary-red);
+    padding-bottom: 5px;
+}
+
+
+/* ------------------------------------------------------------------- */
+/* 2. BOTONES Y LLAMADAS A LA ACCIÓN                                   */
+/* ------------------------------------------------------------------- */
+.btn-primary, .btn-secondary {
+    display: inline-block;
+    padding: 12px 25px;
+    font-weight: 600;
+    text-transform: uppercase;
+    border-radius: 50px;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    text-align: center;
+}
+
+.btn-primary {
+    background-color: var(--color-primary-red);
+    color: var(--color-text-light);
+    border: 2px solid var(--color-primary-red);
+}
+
+.btn-primary:hover {
+    background-color: var(--color-secondary-red);
+    color: var(--color-text-light);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 15px rgba(169, 25, 23, 0.6)
+}
+
+.btn-secondary {
+    background-color: var(--color-background-light);
+    color: var(--color-primary-red);
+    border: 2px solid var(--color-primary-red);
+}
+
+.btn-secondary:hover {
+    background-color: var(--color-primary-red);
+    color: var(--color-text-light);
+    transform: translateY(-2px);
+}
+
+.btn-primary.large {
+    font-size: 1.2em;
+    padding: 15px 40px;
+}
+
+/* Estilos para la sección de CTA unificada (usada en Quiénes Somos) */
+.call-to-action {
+    background-color: var(--color-primary-red);
+    display: flex; 
+    justify-content: space-between;
+    align-items: center;
+    text-align: left;
+    padding: 50px 8%;
+    margin-top: 40px;
+    transition: transform 0.4s ease-out, box-shadow 0.4s ease-out;
+    border-radius: 12px; /* Opción: Borde redondeado */
+}
+
+.call-to-action .section-title {
+    font-size: 3em; 
+    color: var(--color-background-light); /* Asegura el color crema claro */
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.4); /* Sombra para que destaque sobre el fondo */
+    margin-bottom:  0px; /* Más espacio entre título y botón */
+    max-width: 70%;
+    border-bottom: none;
+}
+
+.call-to-action a {
+    background-color: var(--color-background-light);
+    color: var(--color-primary-red);
+}
+.call-to-action a.btn-primary.large {
+    /* Esto ya lo tienes, y es perfecto para este contraste */
+    background-color: var(--color-background-light);
+    color: var(--color-secondary-red); 
+    border-color: var(--color-background-light);
+}
+
+.call-to-action a.btn-primary.large:hover {
+    /* El hover debe ser el color más potente (Rojo Primario) */
+    background-color: white;
+    color: var(--color-primary-red);
+}
+.call-to-action a:hover {
+    background-color: white;
+    color: var(--color-secondary-red);
+}
+.call-to-action:hover {
+    transform: translateY(-8px); /* Mueve la caja ligeramente hacia arriba */
+    
+    /* Sombra roja para simular la elevación, usando tu variable */
+    box-shadow: 0 15px 30px rgba(169, 25, 23, 0.7); 
+}
+
+/* Opcional: Zoom sutil al texto para acompañar el movimiento de la caja */
+.call-to-action:hover .section-title {
+    transform: scale(1.02);
+    transition: transform 0.4s ease-out;
+}
+
+/* ------------------------------------------------------------------- */
+/* 3. CABECERA Y NAVEGACIÓN                                            */
+/* ------------------------------------------------------------------- */
+.main-header {
+    background-color: var(--color-text-light);
+    padding: 10px 5%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 3px solid var(--color-primary-red);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+}
+
+.logo-image {
+    height: 35px; /* Ajusta la altura a tu gusto, 35px es un buen tamaño para cabeceras */
+    width: auto;
+    /* transition: transform 0.3s ease; */
+}
+.logo-final {
+    height: 50px; /* Tamaño compacto para la cabecera */
+    width: auto;
+    display: block;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.logo-final:hover {
+    transform: scale(1.08); /* Aumenta el tamaño en un 8% */
+    filter: brightness(1.1); /* Hace la imagen un 10% más brillante */
+    box-shadow: 0 0 15px rgba(255, 255, 255, 0.4);
+}
+
+.main-nav ul {
+    list-style: none;
+    display: flex;
+    gap: 30px;
+}
+
+.main-nav a {
+    color: var(--color-secondary-red);
+    font-weight: 600;
+}
+
+.main-nav a:hover {
+    color: var(--color-primary-red); 
+    border-bottom: 2px solid var(--color-secondary-red);
+    padding-bottom: 3px; 
+    transition: color 0.2s ease, border-bottom 0.2s ease;
+}
+
+.main-nav ul li.active a {
+    color: var(--color-secondary-red);
+    border-bottom: 2px solid var(--color-primary-red);
+    padding-bottom: 3px; /* Usar el mismo padding que el hover */
+}
+
+/* ------------------------------------------------------------------- */
+/* 4. SECCIÓN HERO (kitopia.html)                                      */
+/* ------------------------------------------------------------------- */
+.hero-section {
+    /* Usar el color primario como fondo para el contraste con el texto */
+    
+    background-image:
+    url(imagenes/RAMA.png),
+    url(imagenes/arte-digital-hermosas-montanas.jpg);
+    background-size:
+    800px, /* Tamaño de la RAMA. Ajusta este valor */
+    cover;
+    background-position: 
+    top left, /* Posición de la RAMA (esquina superior derecha) */
+    center;
+    background-repeat: 
+    no-repeat, /* La rama no se repite */
+    no-repeat;
+    background-color: var(--color-secondary-red);
+    color: var(--color-text-light);
+    text-align: left;
+    padding: 150px 20px 150px 100px;
+    transition: all 0.5s ease;
+    margin-bottom: 0 !important;
+}
+
+.hero-content h2 {
+    font-family: var(--font-japanese);
+    font-size: 3.8em;
+    margin-bottom: 15px;
+    color: var(--color-background-light);
+    text-shadow: 3px 3px 5px rgba(0, 0, 0, 0.4);
+}
+.hero-section:hover .hero-content h2 {
+    /* Mover el texto ligeramente al pasar el cursor sobre la sección */
+    transform: translateY(-5px); 
+    transition: transform 0.3s ease;
+    text-shadow: 4px 4px 6px rgba(0, 0, 0, 0.6); /* Sombra más fuerte al hacer hover */
+}
+.hero-content p {
+    font-size: 1.3em;
+    margin-bottom: 40px;
+    max-width: 500px;
+    margin-left: unset;
+    margin-right: unset;
+}
+.full-width-section {
+    max-width: 100%; /* Permite que ocupe todo el ancho */
+    padding-left: 0; /* Quita el padding lateral */
+    padding-right: 0; /* Quita el padding lateral */
+}
+/* ------------------------------------------------------------------- */
+/* 4.5. DIVISOR DE SECCIÓN (Franja Negra Simple)                            */
+/* ------------------------------------------------------------------- */
+.divider-pattern {
+    width: 100%; 
+    
+    /* ⚠️ CLAVE: Altura de la franja muy pequeña */
+    height: 10px; 
+    
+    /* CLAVE: Color negro sólido */
+    background-color: black; 
+    
+    /* Quitamos el margen superior para pegarlo a la sección Hero */
+    margin-top: 0; 
+    /* Quitamos el margen inferior para pegarlo a la sección Kitopia */
+    margin-bottom: 0; 
+    
+    /* Aseguramos que la franja se vea de borde a borde */
+    padding: 0; 
+}
+/* ------------------------------------------------------------------- */
+/* 5. QUIÉNES SOMOS (quienes-somos.html)                               */
+/* ------------------------------------------------------------------- */
+.about-us {
+    background-color: var(--color-background-light);
+    text-align: center;
+    max-width: 800px; /* Se mantiene el límite para el texto */
+    margin: 20px auto 40px auto;
+    position: static;
+}
+.about-content {
+
+    max-width: 800px;
+    margin: 30px auto 30px auto; /* Limita el ancho del texto */
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 30px;
+    text-align: justify; /* Mantiene la justificación */
+    font-size: 1.1em;
+}
+/* Paso 3: Ajustes para pantallas más pequeñas (Responsive) */
+@media (max-width: 1000px) {
+    .temple-decoration.left {
+        /* Ocultar la decoración en pantallas más pequeñas para ahorrar espacio */
+        display: none; 
+    }
+}
+.mission-and-values {
+    max-width: 1200px; /* Dale un ancho máximo, ajústalo según necesites */
+    margin: 40px auto; /* Centra el contenedor horizontalmente */
+    padding: 0 5%; /* Padding interno para que no toque los bordes */
+    
+    text-align: center;
+    display: flex;
+    flex-direction: column; /* Alinea el h3 y el values-grid verticalmente */
+    align-items: center;
+}
+.mission-and-values h3 {
+    color: var(--color-text-dark); 
+    font-size: 1.5em;
+    margin-bottom: 30px; 
+    font-family: var(--font-secondary); 
+}
+
+.contenedor-superior {
+    max-width: 1200px;
+    margin: 0 auto;
+    /* El contenedor superior debe centrarse para que todo su contenido lo haga */
+}
+
+.values-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
+    margin-top: 30px;
+    max-width: 100%;
+    text-align: center;
+    justify-content: center;
+    width: 100%;
+}
+
+.values-grid div {
+    border: 2px solid var(--color-primary-red);
+    border-radius: 8px;
+    padding: 20px;
+    background-color: white;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+.values-grid div:hover {
+    transform: translateY(-5px); 
+    box-shadow: 0 10px 20px rgba(169, 25, 23, 0.5); /* Sombra roja sutil */
+}
+
+.values-grid h4 {
+    color: var(--color-primary-red);
+    font-size: 1.3em;
+    margin-bottom: 10px;
+    font-family: var(--font-japanese);
+    text-align: center;
+}
+.values-grid div:nth-child(3):last-child:not(:nth-child(3n+1)) {
+
+    grid-column: 1 / -1;
+    justify-self: center;
+    width: 300px;
+}
+
+@media (max-width: 768px) {
+    .values-grid div:nth-child(3):last-child:not(:nth-child(3n+1)) {
+        /* En pantallas pequeñas, debe volver a ocupar toda la columna (posición por defecto) */
+    grid-column: auto;
+    justify-self: stretch; /* Se estira para ocupar el ancho del móvil */
+    width: auto;
+    }
+}
+
+/* ------------------------------------------------------------------- */
+/* 6. PRODUCTOS (productos.html)                                       */
+/* ------------------------------------------------------------------- */
+.products-section {
+    text-align: center;
+    /* 🎯 CLAVE: Reducir el padding superior a 0 o un valor muy pequeño */
+    padding-top: 20px; /* De 60px a 20px para acercar el contenido */
+}
+
+.product-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
+    margin-top: 30px;
+}
+
+.product-card {
+    border: 1px solid var(--color-background-light);
+    padding: 25px;
+    border-radius: 10px;
+    background-color: #f7f7f7;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+    text-align: left;
+}
+
+.product-card h3 {
+    color: var(--color-primary-red);
+    font-size: 1.6em;
+    margin-bottom: 10px;
+    font-family: var(--font-japanese);
+}
+
+.product-card p {
+    flex-grow: 1;
+    margin-bottom: 15px;
+}
+.product-actions {
+    /* Asegura que el contenedor de botones no se estire más de lo necesario */
+    flex-shrink: 0; 
+    margin-top: 15px; 
+    
+    /* Mantenemos los estilos de alineación interna (carrito a la izq, botón a la der) */
+    display: flex; 
+    justify-content: space-between;
+    align-items: center;
+}
+.content-section.products-section {
+    text-align: center;
+    
+    /* 🎯 Sobrescribe el padding superior de 60px con un valor menor */
+    padding-top: 20px; /* Redúcelo a 20px o 0px, según quieras de separación */
+
+    /* Para asegurarnos, también puedes anular los márgenes */
+    margin-top: 0;
+}
+
+/* Si la regla anterior no funciona, intenta la siguiente, ya que la ID es la más fuerte */
+#productos-content {
+    padding-top: 20px !important;
+    margin-top: 0 !important;
+}
+
+/* ------------------------------------------------------------------- */
+/* 7. TALLER (taller.html)                                             */
+/* ------------------------------------------------------------------- */
+.workshop-section {
+    background-color: var(--color-background-light);
+    color: var(--color-text-dark);
+    text-align: center;
+    padding: 60px 5%;
+}
+
+.workshop-section h2.section-title {
+    color: var(--color-secondary-red);
+    border-bottom-color: var(--color-primary-red);
+}
+
+.workshop-intro {
+    font-size: 1.2em;
+    margin-bottom: 40px;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.workshop-steps {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    margin-bottom: 40px;
+}
+
+.step-card {
+    background-color: white;
+    color: var(--color-text-dark);
+    padding: 25px;
+    border-radius: 8px;
+    max-width: 300px;
+    text-align: center;
+    border: 1px solid #ddd;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.step-card h3 {
+    color: var(--color-primary-red);
+    font-size: 1.4em;
+    margin-bottom: 10px;
+}
+
+
+/* ------------------------------------------------------------------- */
+/* 8. ILUSTRACIONES (ilustraciones.html)                               */
+/* ------------------------------------------------------------------- */
+.gallery-section {
+    text-align: center;
+    background-color: var(--color-background-light);
+}
+
+.emotions-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+    margin-top: 30px;
+}
+.illustration-category-title {
+    color: var(--color-text-dark); 
+    font-family: var(--font-secondary);
+    font-size: 1.8em;
+    margin-top: 50px;
+    margin-bottom: 10px;
+}
+.illustration-grid {
+    /* CLASE PARA LA CUADRÍCULA DE 5X2 */
+    display: grid;
+    /* Permite 5 columnas de mínimo 160px de ancho */
+    grid-template-columns: repeat(auto-fit, minmax(160px, 1fr)); 
+    gap: 20px; 
+    margin-top: 30px;
+    /* Ancho suficiente para 5 columnas */
+    max-width: 1100px; 
+    margin-left: auto;
+    margin-right: auto;
+    padding: 0 5%; 
+}
+.illustration-card {
+    /* Estilo de las tarjetas individuales */
+    border: 2px solid var(--color-secondary-red);
+    padding: 15px;
+    border-radius: 8px;
+    text-align: center;
+    background-color: white; /* Tarjetas blancas sobre fondo crema */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.illustration-card:hover {
+    transform: translateY(-5px); 
+    /* Sombra roja sutil al hacer hover */
+    box-shadow: 0 8px 20px rgba(169, 25, 23, 0.4); 
+}
+.illustration-image {
+    /* Estilo de las imágenes */
+    width: 100%;
+    height: 140px; /* Tamaño fijo para que las tarjetas sean uniformes */
+    object-fit: contain; /* Ajusta la imagen sin cortarla */
+    display: block;
+    border-radius: 5px;
+    margin-bottom: 10px;
+}
+.design-name {
+    /* Estilo para el nombre del diseño o la emoción */
+    font-weight: 700;
+    color: var(--color-primary-red);
+    font-size: 1em;
+    margin-top: 5px;
+}
+.illustration-item {
+    border: 1px solid var(--color-background-light);
+    padding: 10px;
+    border-radius: 5px;
+    text-align: center;
+    font-weight: 600;
+}
+/* Estilo para imágenes (si las incluyes más tarde) */
+.illustration-item img {
+    width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 5px;
+    transition: transform 0.3s ease;
+}
+
+
+/* ------------------------------------------------------------------- */
+/* 9. CONTACTO Y PAGO (contacto.html)                                  */
+/* ------------------------------------------------------------------- */
+.contact-grid {
+    display: grid;
+    grid-template-columns: 1fr 1.2fr; 
+    gap: 40px;
+    margin-top: 30px;
+}
+
+.contact-details-box {
+    padding: 20px;
+    border: 1px solid var(--color-secondary-red);
+    border-radius: 10px;
+    background-color: var(--color-background-light);
+}
+
+.contact-details-box h3, .contact-details-box h4 {
+    color: var(--color-primary-red);
+    margin-bottom: 15px;
+    font-family: var(--font-japanese);
+}
+
+.map-placeholder {
+    height: 200px;
+    width: 100%;
+    background-color: #e0e0e0;
+    line-height: 200px;
+    text-align: center;
+    margin-top: 15px;
+    border-radius: 5px;
+}
+
+.social-links-group a {
+    display: block;
+    margin-bottom: 10px;
+}
+
+/* Estilos de Formulario de Contacto */
+.contact-form input[type="text"],
+.contact-form input[type="email"],
+.contact-form textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-family: var(--font-secondary);
+}
+
+.contact-form button[type="submit"] {
+    width: 100%;
+    margin-top: 10px;
+}
+
+.compra-grid-simplified { 
+    display: grid;
+    grid-template-columns: 1fr; /* Una sola columna */
+    gap: 40px;
+    margin-top: 30px;
+    max-width: 700px; /* Limita el ancho para que la caja no sea gigante */
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.payment-and-contact-box { /* Nuevo nombre de la caja principal */
+    padding: 30px;
+    border: 1px solid var(--color-secondary-red);
+    border-radius: 10px;
+    background-color: white;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+    text-align: left; /* Alineamos el texto a la izquierda dentro de la caja */
+}
+
+.payment-and-contact-box h3, .payment-and-contact-box h4 {
+    color: var(--color-primary-red);
+    margin-bottom: 15px;
+    font-family: var(--font-japanese);
+}
+
+.payment-list {
+    list-style: none;
+    padding-left: 0;
+}
+
+.payment-list li {
+    margin-bottom: 10px;
+    font-size: 1.1em;
+    display: flex;
+    align-items: center;
+}
+
+.payment-list .payment-icon {
+    width: 40px; /* Ajusta el tamaño para que se vean como iconos pequeños */
+    height: auto; /* Mantiene la proporción */
+    margin-right: 15px; /* Espacio a la derecha de la imagen */
+    vertical-align: middle; /* Alinea el icono con el texto */
+    
+    /* Opcional: transiciones si quieres efectos hover */
+    transition: transform 0.2s ease;
+}
+
+/* Opcional: efecto hover para los iconos de pago */
+.payment-list li:hover .payment-icon {
+    transform: scale(1.1); /* Ligeramente más grande al pasar el cursor */
+}
+
+/* Asegúrate de que los elementos de la lista se alineen bien */
+.payment-list li {
+    display: flex; /* Para que el icono y el texto estén en la misma línea */
+    align-items: center; /* Centra verticalmente icono y texto */
+    margin-bottom: 10px; /* Espacio entre los ítems de la lista */
+    font-size: 1.1em;
+}
+
+/* ------------------------------------------------------------------- */
+/* 10. PIE DE PÁGINA                                                   */
+/* ------------------------------------------------------------------- */
+.main-footer {
+    background-color: var(--color-secondary-red);
+    color: var(--color-background-light);
+    padding: 40px 5%;
+    font-size: 0.9em;
+    margin-top: 40px;
+}
+
+.main-footer:hover .heart {
+     color: white; 
+    text-shadow: 0 0 5px rgba(255, 255, 255, 0.8);
+}
+
+.main-footer .heart {
+    color: var(--color-primary-red);
+}
+
+.footer-content {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); 
+    gap: 30px;
+    max-width: 1200px;
+    margin: 0 auto; /* Centra el área de contenido del footer */
+    text-align: left; /* Alinea el texto en las columnas a la izquierda */
+}
+.footer-column h4 {
+    font-family: var(--font-secondary);
+    color: var(--color-background-light); 
+    font-size: 1.1em;
+    margin-bottom: 15px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2); 
+    padding-bottom: 5px;
+    text-align: center; 
+}
+
+.footer-column {
+    text-align: center; 
+}
+
+.footer-column p {
+    margin-bottom: 8px;
+    display: flex; 
+    align-items: center;
+    justify-content: center; 
+}
+
+.footer-column i {
+    font-size: 1.1em;
+    margin-right: 10px;
+    color: var(--color-background-light);
+}
+
+.social-icons a {
+    color: var(--color-background-light);
+    font-size: 1.5em;
+    margin: 0 10px; /* Ajuste el margen horizontal */
+    transition: color 0.3s ease;
+}
+
+.social-icons a:hover {
+    color: var(--color-primary-red);
+}
+
+.copyright-text {
+    /* ⚠️ CLAVE: Ocupa las 3 columnas para quedar abajo y centrado */
+    grid-column: 1 / -1; 
+    text-align: center;
+    padding-top: 15px;
+    margin-top: 15px; 
+    border-top: 1px solid rgba(255, 255, 255, 0.1); /* Línea de separación */
+}
+
+/* ------------------------------------------------------------------- */
+/* 11. MEDIA QUERIES PARA RESPONSIVE                                   */
+/* ------------------------------------------------------------------- */
+@media (max-width: 900px) {
+    .hero-content h2 {
+        font-size: 3em;
+    }
+}
+
+@media (max-width: 768px) {
+    .main-header {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .main-nav ul {
+        gap: 15px;
+    }
+
+    .hero-content h2 {
+        font-size: 2.5em;
+    }
+    
+    .contact-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .workshop-steps {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .values-grid {
+        padding: 0 10px;
+    }
+}
+
+@media (max-width: 500px) {
+    h2.section-title {
+        font-size: 2em;
+    }
+    
+    .main-nav ul {
+        flex-direction: column;
+    }
+    
+    .main-header .btn-primary {
+        width: 100%;
+    }
+    
+    .product-grid {
+        gap: 20px;
+    }
+}
+
+@media (max-width: 768px) {
+    .footer-content {
+        grid-template-columns: 1fr; /* Apila las columnas */
+        text-align: center; 
+    }
+    
+    .footer-column p {
+        justify-content: center; 
+    }
+}
+/* ------------------------------------------------------------------- */
+/* ESTILO PARA ICONOS DE IMAGEN (.feature-icon) */
+/* ------------------------------------------------------------------- */
+
+.feature-item .feature-icon {
+    /* ⚠️ CLAVES DE TAMAÑO: Estos valores hacen que sean pequeños */
+    width: 80px;  /* Define el ancho del icono (ej. 80px) */
+    height: auto; /* Mantiene la proporción para que no se deformen */
+    
+    /* Centrado y Espaciado */
+    display: block; /* Asegura que la imagen ocupe su propia línea para centrarla */
+    margin: 0 auto 15px auto; /* Centra horizontalmente y añade espacio abajo */
+    
+    /* Efectos opcionales (para dinamismo, ya sugeridos) */
+    transition: transform 0.3s ease;
+}
+
+.feature-item:hover .feature-icon {
+    transform: scale(1.1);
+}
+/* ------------------------------------------------------------------- */
+/* ESTILOS ESPECÍFICOS DEL CARRUSEL DE ILUSTRACIONES (Slick) */
+/* ------------------------------------------------------------------- */
+
+.carousel-taller {
+    /* Define el ancho máximo y centra el carrusel en la página */
+    max-width: 1400px; 
+    margin: 40px auto; 
+    padding: 0 10px; /* Asegura que las flechas tengan espacio en los bordes */
+}
+
+/* Estilo para cada contenedor de imagen dentro del carrusel */
+.carousel-item-img {
+    /* El padding lateral crea el espacio visible entre las imágenes */
+    padding: 0 15px; 
+    text-align: center;
+}
+
+/* Estilo para la imagen en sí */
+.carousel-item-img img {
+    width: 100%;
+    /* Mantiene una altura fija para todas las imágenes (ajusta 300px si es necesario) */
+    height: 380px; 
+    object-fit: cover; /* Asegura que la imagen cubra el área sin deformarse */
+    display: block;
+    border-radius: 12px;
+    /* Añade un efecto de elevación para dinamismo */
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.3); 
+    transition: transform 0.3s ease;
+}
+
+.carousel-item-img img:hover {
+    transform: scale(1.02); /* Efecto de zoom sutil al pasar el mouse */
+}
+
+/* Estilo para el texto debajo de la imagen */
+.carousel-item-img p {
+    margin-top: 15px;
+    font-weight: 600;
+    color: var(--color-text-dark); /* Color oscuro para el texto (ajusta si usas fondo negro) */
+}
+
+/* ------------------------------------------------------------------- */
+/* PERSONALIZACIÓN DE ELEMENTOS DE NAVEGACIÓN DE SLICK (Flechas y Puntos) */
+/* ------------------------------------------------------------------- */
+
+/* ------------------------------------------------------------------- */
+/* 1. ESTILOS PARA LOS CONTENEDORES DE FLECHA (Botones Circulares) */
+/* ------------------------------------------------------------------- */
+
+.slick-prev,
+.slick-next {
+    /* ⚠️ CAMBIO CLAVE: Fondo Vinotinto */
+    background-color: #8B0000; /* Fondo con el color Vinotinto de Kitopia */ 
+    
+    /* Propiedades de tamaño y forma */
+    width: 60px; 
+    height: 60px;
+    border-radius: 50%; /* Forma de círculo */
+    
+    /* Asegura que estén encima del contenido y centrados */
+    z-index: 10; 
+    line-height: 60px; 
+    text-align: center;
+    
+    /* Elimina el borde por defecto de Slick */
+    border: none; 
+    
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.4); 
+    transition: background-color 0.3s ease;
+}
+
+/* ------------------------------------------------------------------- */
+/* 2. ESTILOS PARA LOS ICONOS (< y >) DENTRO DEL BOTÓN */
+/* ------------------------------------------------------------------- */
+
+.slick-prev:before, 
+.slick-next:before {
+    /* ⚠️ CAMBIO CLAVE: Color Blanco para contraste */
+    color: #FFFFFF; 
+    font-size: 50px; 
+    opacity: 1;
+}
+
+/* ------------------------------------------------------------------- */
+/* 3. POSICIONAMIENTO Y HOVER */
+/* ------------------------------------------------------------------- */
+
+/* Efecto al pasar el mouse */
+.slick-prev:hover,
+.slick-next:hover {
+    /* Oscurece ligeramente el vinotinto al pasar el mouse */
+    background-color: #6A0000; 
+}
+
+/* Posicionamiento final */
+.slick-prev {
+    left: -40px; 
+}
+.slick-next {
+    right: -40px; 
+}
+
+
+/* ------------------------------------------------------------------- */
+/* AJUSTE DE ESTILO DE LOS PUNTOS DE NAVEGACIÓN (DOTS) - Se mantienen igual */
+/* ------------------------------------------------------------------- */
+
+.slick-dots {
+    bottom: -40px; 
+}
+.slick-dots li button:before {
+    color: #8B0000; 
+    opacity: 0.4; 
+    font-size: 10px; 
+}
+.slick-dots li.slick-active button:before {
+    color: #8B0000; 
+    opacity: 1; 
+}
+
+/* ------------------------------------------------------------------- */
+/* ESTILOS PARA LA NUEVA VISTA DE PRODUCTOS (CARRUSEL) */
+/* ------------------------------------------------------------------- */
+
+/* Contenedor de la imagen para hacerla clickeable */
+.product-card .product-image-wrapper {
+    position: relative; 
+    cursor: pointer; /* Indica que la imagen es clickeable para ver el detalle */
+    margin-bottom: 15px; 
+}
+
+.product-card .product-image {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+}
+
+/* Descripción corta del producto en el carrusel para mantener el layout uniforme */
+.product-short-description {
+    font-size: 0.9em;
+    color: #666;
+    margin-bottom: 15px;
+    min-height: 50px; /* Ajusta la altura si es necesario */
+}
+
+/* Contenedor de acciones (carrito y ver detalle) */
+.product-actions {
+    display: flex;
+    justify-content: space-around; /* Distribuye el espacio entre los elementos */
+    align-items: center;
+    margin-top: 20px;
+    border-top: 1px solid #eee; /* Separador visual */
+    padding-top: 15px;
+}
+
+/* Estilo del icono de añadir al carrito (circular y destacado) */
+.add-to-cart-icon {
+    background-color: var(--color-primary-dark); /* Color oscuro de tu marca */
+    color: white;
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.3em;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.2);
+    text-decoration: none;
+}
+
+.add-to-cart-icon:hover {
+    background-color: var(--color-primary-red); /* Color de acento al pasar el ratón */
+    transform: translateY(-2px);
+}
+
+/* Nuevo estilo para el botón "Ver Detalle" (más pequeño) */
+.btn-secondary-small {
+    padding: 8px 15px;
+    font-size: 0.9em;
+    font-weight: 600;
+    text-decoration: none;
+    color: var(--color-primary-dark);
+    border: 2px solid var(--color-primary-dark);
+    border-radius: 5px;
+    background-color: transparent;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.btn-secondary-small:hover {
+    background-color: var(--color-primary-dark);
+    color: white;
+}
+
+
+/* ------------------------------------------------------------------- */
+/* Estilos para las acciones (Botón Ver Detalle + Icono Carrito) */
+/* ------------------------------------------------------------------- */
+.product-actions {
+    display: flex; /* Permite que el botón y el icono estén en la misma línea */
+    justify-content: flex-end; /* Alinea los elementos a la derecha por defecto */
+    align-items: center;
+    gap: 10px; /* Espacio entre el carrito y el botón */
+    margin-top: 15px;
+}
+
+.product-actions .add-to-cart-icon {
+    /* ⚠️ CAMBIOS CLAVE: Visibilidad Siempre Activa */
+    
+    /* 1. Opacidad: Debe ser 1 para que se vea siempre (si había 'opacity: 0' en el hover, esto lo arregla) */
+    opacity: 1; 
+    
+    /* 2. Diseño de Ícono como Botón */
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    
+    background-color: var(--color-background-light); /* Fondo claro (como botón secundario) */
+    color: var(--color-primary-red); /* Color del icono */
+    border: 2px solid var(--color-primary-red); /* Borde para que destaque */
+    
+    width: 40px; /* Ancho fijo para el círculo */
+    height: 40px; /* Alto fijo para el círculo */
+    border-radius: 50%; /* Forma de círculo */
+    font-size: 1.1em; /* Tamaño del icono del carrito */
+    
+    transition: all 0.2s ease; /* Transición para el hover */
+}
+
+.product-actions .add-to-cart-icon:hover {
+    background-color: var(--color-primary-red);
+    color: var(--color-text-light);
+    transform: scale(1.1); /* Efecto de zoom al pasar el ratón */
+}
+
+/* Ajuste del botón 'Ver Detalle/Opciones' para que acompañe al icono */
+.product-actions .btn-secondary-small {
+    /* El botón de detalle puede ser la parte principal del espacio (flex-grow: 1) */
+    flex-grow: 1; 
+    padding: 8px 15px; /* Un poco más pequeño que los botones grandes */
+    font-size: 0.9em;
+}
+/* ------------------------------------------------------------------- */
+/* LIGHTBOX PARA EL ZOOM DE IMAGEN */
+/* ------------------------------------------------------------------- */
+
+.lightbox-modal {
+    display: none; /* Oculto por defecto */
+    position: fixed; /* Fijo sobre toda la página */
+    z-index: 2000; /* Asegura que esté por encima de todo */
+    padding-top: 60px; 
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto; 
+    background-color: rgba(0,0,0,0.9); /* Fondo negro semitransparente */
+}
+
+.lightbox-content {
+    margin: auto;
+    display: block;
+    width: 80%;
+    max-width: 700px;
+    animation-name: zoom;
+    animation-duration: 0.6s;
+}
+
+/* Botón de cerrar (la X) */
+.close-btn {
+    position: absolute;
+    top: 15px;
+    right: 35px;
+    color: #f1f1f1;
+    font-size: 40px;
+    font-weight: bold;
+    transition: 0.3s;
+    cursor: pointer;
+    z-index: 2001;
+}
+
+.close-btn:hover,
+.close-btn:focus {
+    color: #bbb;
+    text-decoration: none;
+}
+
+/* Animación de zoom */
+@keyframes zoom {
+    from {transform:scale(0)} 
+    to {transform:scale(1)}
+}
+/* PARTE FINAL DE kitopia web.css */
+/* ------------------------------------------------------------------- */
+/* Estilos para ocultar los puntos de navegación de Slick Carousel */
+/* ------------------------------------------------------------------- */
+
+.slick-dots {
+    display: none !important; /* Fuerza la eliminación de los puntos y su espacio */
+}
+
+/* Si esto no elimina el espacio, y es el carrusel el que lo añade: */
+.product-showcase-carousel {
+    /* (Esta clase no estaba en tu CSS, pero si la tienes en HTML, úsala) */
+    max-width: 1000px; /* Estaba en 1200px (o similar), redúcelo */
+    margin: 20px auto;
+}
+/* === BLOQUE UNIFICADO: DETALLE DE PRODUCTO (Usar una sola vez) === */
+#product-detail {
+  padding: 4rem 8rem;
+  box-sizing: border-box;
+}
+
+#product-detail .product-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center; /* centra todo el bloque en la página */
+  align-items: center;     /* alinea verticalmente imagen y texto */
+  gap: 3rem;
+  margin: 0 auto;
+  max-width: 1200px;
+  flex-direction: row;
+}
+
+/* Imagen (izquierda) */
+#product-detail .product-images {
+  flex: 1 1 40%;
+  text-align: center;
+  padding: 15px;
+  background-color: var(--color-background-light);
+  border-radius: 12px;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+  min-width: 280px; /* evita que la imagen se haga demasiado pequeña */
+}
+
+#product-detail .product-images img,
+#product-detail .product-images .main-image {
+  width: 100%;
+  height: auto;
+  max-width: 450px;
+  border-radius: 12px;
+  display: block;
+  margin: 0 auto;
+}
+
+/* Texto (derecha) */
+#product-detail .product-info {
+  flex: 1 1 50%;
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+  max-width: 600px;
+  margin: 0;
+  padding: 0 1rem;
+  text-align: left;
+}
+
+/* Ajustes visuales */
+#product-detail .product-info h1 {
+  font-size: 2.2rem;
+  margin: 0;
+}
+
+#product-detail .product-price-large {
+  font-size: 1.8rem;
+  font-weight: 900;
+  color: var(--color-primary-red);
+  margin-top: 0.6rem;
+}
+
+#product-detail .product-description {
+  margin-top: 0.6rem;
+  line-height: 1.6;
+}
+
+/* Purchase box alineado a la izquierda del texto, pero responsive */
+#product-detail .purchase-box {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-top: 1.2rem;
+  padding-top: 0.6rem;
+  border-top: 1px solid rgba(0,0,0,0.06);
+}
+
+/* Responsive */
+@media (max-width: 1024px) {
+  #product-detail {
+    padding: 3rem 4rem;
+  }
+  #product-detail .product-images { flex-basis: 45%; }
+  #product-detail .product-info { flex-basis: 50%; }
+}
+
+@media (max-width: 768px) {
+  #product-detail {
+    padding: 2rem 1.5rem;
+  }
+  #product-detail .product-container {
+    flex-direction: column;
+    align-items: center;
+  }
+  #product-detail .product-info {
+    text-align: center;
+    padding: 0;
+  }
+  #product-detail .purchase-box {
+    flex-direction: column;
+    align-items: center;
+  }
+}
+/* ========================================================= */
+/* DETALLE DE PRODUCTO UNIFICADO (Cartuchera / Cuadernillo)  */
+/* ========================================================= */
+
+.product-container {
+  display: flex;
+  align-items: flex-start !important;
+  justify-content: center;
+
+  margin: 60px auto;
+  max-width: 1100px;
+  padding: 0 40px;
+}
+
+.product-images {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+}
+
+.product-images img {
+  border-radius: 20px;
+  box-shadow: 0px 8px 20px rgba(0,0,0,0.15);
+  background-color: #5a0a0a;
+  padding: 10px;
+  max-width: 100%;
+}
+
+.product-info {
+  flex: 1;
+  max-width: 480px;
+  color: #3a2b24;
+  font-size: 15px;
+  line-height: 1,1 !important;
+  margin-top: 0 !important;
+  padding-top: 0 !important;
+  gap: 0.4rem !important;
+}
+.product-info h1,
+.product-info h3,
+.product-info p,
+.product-info ul,
+.product-info li {
+  margin-bottom: 8px !important; /* reduce espacio extra entre elementos */
+}
+.product-info h1 {
+  font-family: 'Zen Kaku Gothic New', sans-serif;
+  font-weight: 900;
+  color: #812b2b;
+  margin-bottom: 10px;
+  text-transform: uppercase;
+  margin-top: 0 !important;
+}
+
+.product-sku {
+  font-size: 14px;
+  color: #777;
+  margin-bottom: 10px;
+}
+
+.product-price-large {
+  color: #c43d3d;
+  font-weight: 700;
+  font-size: 20px;
+  margin-bottom: 25px;
+}
+
+.product-description {
+  margin-top: 20px;
+}
+
+.product-description h3 {
+  color: #812b2b;
+  font-weight: 600;
+  font-size: 14px;
+  margin-bottom: 8px;
+  text-transform: uppercase;
+}
+
+.product-description p {
+  text-align: justify;
+  margin-bottom: 10px;
+}
+
+.product-description ul {
+  margin: 0 0 15px 18px;
+  line-height: 1.4;
+}
+
+.product-description li {
+  margin-bottom: 6px;
+}
+
+.purchase-box {
+  margin-top: 15px;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.quantity-selector label {
+  font-weight: 500;
+  margin-right: 8px;
+}
+
+.btn-primary.large-add-to-cart {
+  margin-top: 10px;
+  background-color: #c43d3d;
+  color: white;
+  font-weight: 600;
+  padding: 10px 18px;
+  border-radius: 20px;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.btn-primary.large-add-to-cart:hover {
+  background-color: #a12f2f;
+}
+
+.disclaimer {
+  font-size: 13px;
+  color: #777;
+  margin-top: 10px;
+}
+
+.product-link.btn-secondary-outline {
+  display: inline-block;
+  margin-top: 15px;
+  padding: 8px 16px;
+  border: 2px solid #c43d3d;
+  border-radius: 20px;
+  color: #c43d3d;
+  font-weight: 600;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+.product-link.btn-secondary-outline:hover {
+  background-color: #c43d3d;
+  color: #fff;
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+  .product-container {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .product-info {
+    text-align: center;
+  }
+
+  .purchase-box {
+    justify-content: center;
+  }
+}
+
+/* Quitar espacio entre precio y descripción del producto */
+.product-price-large {
+  margin-bottom: 5px !important; /* antes podía estar en 20-25px */
+}
+
+.product-description {
+  margin-top: 5px !important; /* reduce espacio superior */
+}
+.product-info > * {
+  margin-top: 0 !important;
+  margin-bottom: 0 !important;
+}
+
+.product-info h1,
+.product-info .product-price-large,
+.product-info .product-description {
+  margin-bottom: 8px !important; /* solo un pequeño margen visual */
+}
+/* --- Arreglo para la sección de compra (cartuchera) --- */
+
+.product-divider {
+    border: none;
+    border-top: 1px solid #c7a38f; /* color sutil como en el cuadernillo */
+    margin: 25px 0 15px;
+}
+
+.purchase-box {
+    display: flex;
+    align-items: center;
+    justify-content: center; /* centra todo horizontalmente */
+    gap: 16px;
+    margin-top: 15px;
+    flex-wrap: wrap;
+}
+
+.quantity-selector {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-weight: 500;
+}
+
+.quantity-selector input[type="number"] {
+    width: 55px;
+    padding: 5px;
+    text-align: center;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    font-size: 0.9rem;
+}
+
+.large-add-to-cart {
+    background-color: #a41c1c;
+    border: none;
+    border-radius: 12px;
+    color: #fff;
+    font-weight: 600;
+    padding: 10px 18px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+}
+
+.large-add-to-cart:hover {
+    background-color: #8c1717;
+}
+
+.disclaimer {
+    margin-top: 15px;
+    font-size: 0.9rem;
+    color: #444;
+}
+.rojo {
+  color: #b80000; /* puedes usar el rojo que usa el logo de Kitopia */
+  font-weight: bold;
+}

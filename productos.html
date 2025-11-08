@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kitopia - Nuestros Productos</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"> 
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&family=Zen+Kaku+Gothic+New:wght@900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="kitopia web.css">
+   <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.css"/>
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick-theme.min.css"/>
+</head>
+<body>
+    <header class="main-header">
+        <div class="logo">
+        <a href="kitopia.html" class="logo">
+    <img src="imagenes/LOGO-2.png" alt="Logo Kitopia Completo" class="logo-final">
+ 
+</a>
+    </div>
+        <nav class="main-nav">
+            <ul>
+                <li><a href="quienes-somos.html">Quiénes Somos</a></li>
+                <li class="active"><a href="productos.html">Productos</a></li> 
+                <li><a href="taller.html">Taller Co-Creación</a></li>
+                <li><a href="ilustraciones.html">Ilustraciones</a></li>
+                <li><a href="compra.html">Compra</a></li>
+            </ul>
+        </nav>
+        <a href="taller.html" class="btn-primary">¡Crea tu Kit!</a>
+    </header>
+
+    <main>
+        <section id="productos-content" class="products-section">
+            <h2 class="section-title">Nuestros Productos: Lienzos de Identidad</h2>
+            <p class="intro-page">Funcionalidad, estética y sostenibilidad en tres piezas clave para el estudiante consciente.</p>
+            
+            <div class="product-showcase-carousel">    
+    
+    <article class="product-card">
+    <div class="product-image-wrapper" onclick="window.location.href='detalle-bolsa.html'">
+        <img src="imagenes/bolsa-de-tela.png" alt="Tote Bag personalizada Kitopia" class="product-image zoomable-image"
+        data-full-src="imagenes/bolsa-de-tela.png">
+    </div>
+        
+        <h3>BOLSA DE TELA PERSONALIZADA</h3>
+        <p class="price-container">
+            <span class="product-price">$35.000 COP</span>
+        </p>
+        <p class="product-short-description">Una bolsa de tela reutilizable, resistente y versátil.</p>
+        
+        <div class="product-actions">
+        <a href="detalle-bolsa.html" onclick="agregarAlCarrito('bolsa', 35000)" class="add-to-cart-icon" title="Añadir al Carrito">
+    <i class="fas fa-shopping-cart"></i>
+</a>
+            <a href="detalle-bolsa.html" class="btn-secondary-small">Ver Detalle</a>
+        </div>
+    </article>
+
+    <article class="product-card">
+        <div class="product-image-wrapper" onclick="window.location.href='detalle-cuaderno.html'">
+            <img src="imagenes/agenda-1.png" alt="Cuaderno reciclado Kitopia" class="product-image">
+        </div>
+        <h3>CUADERNILLO</h3>
+        <p class="price-container">
+            <span class="product-price">$22.500 COP</span>
+        </p>
+        <p class="product-short-description">Elaborados con papel reciclado y encuadernación sencilla (no cosida).</p>
+        
+        <div class="product-actions">
+            <a href="detalle-cuaderno.html" onclick="agregarAlCarrito('cuadernillo', 22500)" class="add-to-cart-icon" title="Añadir al Carrito">
+                <i class="fas fa-shopping-cart"></i>
+            </a>
+            <a href="detalle-cuaderno.html" class="btn-secondary-small">Ver Detalle</a>
+        </div>
+    </article>
+
+    <article class="product-card">
+        <div class="product-image-wrapper" onclick="window.location.href='detalle-cartuchera.html'">
+            <img src="imagenes/cartuchera-1.png" alt="Cartuchera reciclable modular Kitopia" class="product-image">
+        </div>
+        <h3>CARTUCHERA RECICLABLE</h3>
+        <p class="price-container">
+            <span class="product-price">$18.000 COP</span>
+        </p>
+        <p class="product-short-description">Hecha con materiales sostenibles, práctica y resistente. </p>
+        
+        <div class="product-actions">
+            <a href="detalle-cartuchera.html" onclick="agregarAlCarrito('cartuchera', 18000)" class="add-to-cart-icon" title="Añadir al Carrito">
+                <i class="fas fa-shopping-cart"></i>
+            </a>
+            <a href="detalle-cartuchera.html" class="btn-secondary-small">Ver Opciones</a>
+
+        </div>
+    </article>
+</div>
+    
+    <footer class="main-footer"> 
+    <div class="footer-content">
+        
+        <div class="footer-column contact-info">
+            <h4>CONTÁCTANOS</h4>
+            <p>
+                <i class="fas fa-phone"></i> +57 (310) 555-1234
+            </p>
+            <p>
+                <i class="fas fa-envelope"></i> hola@kitopia.com
+            </p>
+        </div>
+
+        <div class="footer-column social-links">
+            <h4>SÍGUENOS</h4>
+            <div class="social-icons">
+                <a href="#" target="_blank"><i class="fab fa-instagram"></i></a>
+                <a href="#" target="_blank"><i class="fab fa-facebook-f"></i></a>
+                <a href="#" target="_blank"><i class="fab fa-pinterest-p"></i></a>
+            </div>
+        </div>
+
+        <div class="footer-column legal-info">
+            <h4>UBICACIÓN & LEGAL</h4>
+            <p>
+                <i class="fas fa-map-marker-alt"></i> Bogotá, Colombia
+            </p>
+        </div>
+    </div>
+    
+    <div class="copyright-bar">
+        <p class="copyright-text">
+            &copy; 2025 Kitopia. Hecho con <span class="heart">❤</span> y creatividad.
+        </p>
+    </div>
+</footer>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>
+    <script>
+        $(document).ready(function(){
+            $('.product-showcase-carousel').slick({
+                infinite: true,
+                slidesToShow: 3,      // Muestra 3 productos a la vez
+                slidesToScroll: 1,
+                dots: true,           // Muestra los puntos de navegación
+                arrows: true,         // Muestra las flechas de navegación
+                responsive: [
+                    {
+                      breakpoint: 1024,
+                      settings: {
+                        slidesToShow: 2,
+                      }
+                    },
+                    {
+                      breakpoint: 600,
+                      settings: {
+                        slidesToShow: 1,
+                      }
+                    }
+                ]
+            });
+        });
+    </script>
+    <div id="lightbox-modal" class="lightbox-modal">
+    <span class="close-btn">&times;</span>
+    <img class="lightbox-content" id="lightbox-img">
+    $(document).ready(function(){
+            // ... (Código de Slick Carousel) ...
+
+            // Lógica para el Lightbox (Zoom al hacer clic)
+            $('.product-image-wrapper').on('click', function(e) {
+                // Evita que el clic abra detalle-bolsa.html
+                e.stopPropagation(); 
+                e.preventDefault(); 
+                
+                var imgSrc = $(this).find('.product-image').attr('src');
+                $('#lightbox-img').attr('src', imgSrc);
+                $('#lightbox-modal').css('display', 'block');
+            });
+
+            // Cierra el modal con la X
+            $('.close-btn').on('click', function() {
+                $('#lightbox-modal').css('display', 'none');
+            });
+
+            // Cierra el modal si se hace clic fuera de la imagen
+            $('#lightbox-modal').on('click', function(e) {
+                if (e.target.id === 'lightbox-modal') {
+                    $('#lightbox-modal').css('display', 'none');
+                }
+            });
+            
+        });
+</div>
+</body>
+</html>
